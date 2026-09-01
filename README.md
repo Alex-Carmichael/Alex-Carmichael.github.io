@@ -9,7 +9,8 @@ Personal portfolio site, authored as a Claude Design canvas and deployed to GitH
 | `Alex Carmichael Portfolio.dc.html` | **Source of truth.** The canvas document — keep editing this in Claude Design. |
 | `support.js` | The Claude Design runtime that renders the document in a browser. Generated; don't hand-edit. |
 | `build.py` | Copies the source to `dist/index.html` and injects `<head>` metadata (title, description, social cards, favicon, `lang`) plus a `<noscript>` fallback. |
-| `public/` | Static files copied verbatim to the site root — currently `Alex-Carmichael-CV.docx`, linked from the three "Download CV" buttons. Drop replacements here. |
+| `public/` | Static files copied verbatim to the site root — currently the CV as `.pdf` (linked from the three "Download CV" buttons) and the `.docx` it came from. |
+| `tools/cv_to_pdf.py` | Regenerates `public/Alex-Carmichael-CV.pdf` from the `.docx`. Run it after updating the CV. |
 | `.github/workflows/deploy-pages.yml` | Builds and publishes `dist/` to GitHub Pages on every push to `main`. |
 
 `dist/` is generated and git-ignored — nothing built is committed.

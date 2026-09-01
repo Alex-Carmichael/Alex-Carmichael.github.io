@@ -26,7 +26,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DOCX = ROOT / "public" / "Alex-Carmichael-CV.docx"
+DOCX = ROOT / "cv-source" / "Alex-Carmichael-CV.docx"
 PDF = ROOT / "public" / "Alex-Carmichael-CV.pdf"
 
 W = "http://schemas.openxmlformats.org/wordprocessingml/2006/main"

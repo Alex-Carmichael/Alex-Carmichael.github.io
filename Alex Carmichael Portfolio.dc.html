@@ -15,8 +15,8 @@
   body { margin: 0; background: #F6F5F1; color: #0B0C0E; font-family: Archivo, system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-wrap: pretty; overflow-x: hidden; }
   * { box-sizing: border-box; }
   a { color: #0B0C0E; text-decoration: none; }
-  a:hover { color: oklch(0.63 0.19 45); }
-  ::selection { background: oklch(0.63 0.19 45 / 0.25); }
+  a:hover { color: oklch(0.62 0.16 255); }
+  ::selection { background: oklch(0.62 0.16 255 / 0.25); }
   section[id], article[id] { scroll-margin-top: 92px; }
   @keyframes heroIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
   @keyframes flow { from { background-position: 0 0; } to { background-position: 22px 0; } }
@@ -41,12 +41,12 @@
 
 <div id="top" style="position: relative;">
 
-  <div style="position: fixed; top: 0; left: 0; height: 2px; background: oklch(0.63 0.19 45); z-index: 60; width: 0%;" ref="{{ progressRef }}"></div>
+  <div style="position: fixed; top: 0; left: 0; height: 2px; background: oklch(0.62 0.16 255); z-index: 60; width: 0%;" ref="{{ progressRef }}"></div>
 
   <header style="position: sticky; top: 0; z-index: 50; background: rgba(246,245,241,0.82); backdrop-filter: blur(12px) saturate(1.4); border-bottom: 1px solid #E2DFD6;">
     <nav style="max-width: 1200px; margin: 0 auto; padding: 15px 28px; display: flex; align-items: center; gap: 26px;">
       <a href="#top" style="display: flex; align-items: baseline; gap: 9px; font-size: 15px; font-weight: 600; letter-spacing: -0.02em;">
-        <span style="width: 7px; height: 7px; border-radius: 50%; background: oklch(0.63 0.19 45); display: inline-block; animation: pulseDot 3.4s ease-in-out infinite;"></span>
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: oklch(0.62 0.16 255); display: inline-block; animation: pulseDot 3.4s ease-in-out infinite;"></span>
         Alex Carmichael
       </a>
       <div style="flex: 1;"></div>
@@ -56,9 +56,10 @@
         <a href="#experience" style="font-size: 14px; color: #55595F;" style-hover="color: #0B0C0E;">Experience</a>
         <a href="#about" style="font-size: 14px; color: #55595F;" style-hover="color: #0B0C0E;">About</a>
         <a href="#skills" style="font-size: 14px; color: #55595F;" style-hover="color: #0B0C0E;">Skills</a>
+        <a href="#ai-tooling" style="font-size: 14px; color: #55595F;" style-hover="color: #0B0C0E;">AI</a>
         <a href="#contact" style="font-size: 14px; color: #55595F;" style-hover="color: #0B0C0E;">Contact</a>
       </div>
-      <a href="./Alex-Carmichael-CV.pdf" download style="font-size: 13px; font-weight: 500; color: #F6F5F1; background: #0B0C0E; padding: 9px 15px; border-radius: 2px;" style-hover="background: oklch(0.63 0.19 45); color: #0B0C0E;">Download CV</a>
+      <a href="./Alex-Carmichael-CV.pdf" download style="font-size: 13px; font-weight: 500; color: #F6F5F1; background: #0B0C0E; padding: 9px 15px; border-radius: 2px;" style-hover="background: oklch(0.62 0.16 255); color: #0B0C0E;">Download CV</a>
       <button type="button" data-burger="" onClick="{{ toggleMenu }}" style="display: none; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid #D8D4CA; border-radius: 2px; background: transparent; cursor: pointer; font-family: 'IBM Plex Mono', monospace; font-size: 14px;">{{ burgerLabel }}</button>
     </nav>
     <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
@@ -68,6 +69,7 @@
         <a href="#experience" onClick="{{ closeMenu }}" style="font-size: 17px;">Experience</a>
         <a href="#about" onClick="{{ closeMenu }}" style="font-size: 17px;">About</a>
         <a href="#skills" onClick="{{ closeMenu }}" style="font-size: 17px;">Skills</a>
+          <a href="#ai-tooling" onClick="{{ closeMenu }}" style="font-size: 17px;">AI</a>
         <a href="#contact" onClick="{{ closeMenu }}" style="font-size: 17px;">Contact</a>
         <div style="display: flex; gap: 18px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7079;">
           <a href="https://github.com/Alex-Carmichael" target="_blank" rel="noopener">GitHub</a>
@@ -81,18 +83,18 @@
     <div style="position: absolute; inset: 0; background-image: radial-gradient(#FFFFFF14 1px, transparent 1px); background-size: 26px 26px; opacity: 0.7;"></div>
     <div data-hero="" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 104px 28px 88px; display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr); gap: 72px; align-items: center;">
       <div>
-        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.63 0.19 45); margin: 0 0 26px; animation: heroIn 700ms ease both;">Software Developer — Full-Stack</p>
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.62 0.16 255); margin: 0 0 26px; animation: heroIn 700ms ease both;">Software Developer — Full-Stack</p>
         <h1 style="font-size: clamp(42px, 6.4vw, 84px); line-height: 0.96; letter-spacing: -0.045em; font-weight: 600; margin: 0 0 28px; animation: heroIn 800ms 80ms ease both;">I build software people actually use.</h1>
         <p style="font-size: 19px; line-height: 1.6; color: #B6B8BC; max-width: 54ch; margin: 0 0 24px; animation: heroIn 800ms 160ms ease both;">Four years on production systems — B2B ecommerce, a component-driven CMS, CRM reporting, search, backend services and the internal tooling a business runs on. Not side projects: software customers and colleagues use every day.</p>
         <p style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #7E828A; margin: 0 0 36px; animation: heroIn 800ms 220ms ease both;">.NET / C# / VB / Vue / JavaScript / TypeScript / MySQL / SQL Server / Solr</p>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; animation: heroIn 800ms 280ms ease both;">
-          <a href="#work" style="font-size: 15px; font-weight: 500; color: #0B0C0E; background: oklch(0.63 0.19 45); padding: 13px 24px; border-radius: 2px;" style-hover="background: #F6F5F1; color: #0B0C0E;">View my work</a>
+          <a href="#work" style="font-size: 15px; font-weight: 500; color: #0B0C0E; background: oklch(0.62 0.16 255); padding: 13px 24px; border-radius: 2px;" style-hover="background: #F6F5F1; color: #0B0C0E;">View my work</a>
           <a href="#contact" style="font-size: 15px; font-weight: 500; color: #F6F5F1; border: 1px solid #35383E; padding: 13px 24px; border-radius: 2px;" style-hover="border-color: #F6F5F1;">Contact me</a>
           <a href="./Alex-Carmichael-CV.pdf" download style="font-size: 15px; font-weight: 500; color: #8E9299; padding: 13px 6px;" style-hover="color: #F6F5F1;">Download CV ↓</a>
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 8px 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #9A9EA5; animation: heroIn 800ms 340ms ease both;">
           <span style="border: 1px solid #2C2F35; border-radius: 999px; padding: 6px 12px;">Hull, UK</span>
-          <span style="border: 1px solid #2C2F35; border-radius: 999px; padding: 6px 12px;">Open to relocating — Manchester</span>
+          <span style="border: 1px solid #2C2F35; border-radius: 999px; padding: 6px 12px;">Open to relocation</span>
           <span style="border: 1px solid #2C2F35; border-radius: 999px; padding: 6px 12px;">Hybrid / Remote</span>
         </div>
       </div>
@@ -101,7 +103,7 @@
         <div style="border: 1px solid #24272C; background: linear-gradient(180deg, #121417, #0D0E11); border-radius: 4px; padding: 24px;">
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 20px;">
             <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6E727A; margin: 0;">Platform I work across</p>
-            <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: oklch(0.63 0.19 45); margin: 0;">live</p>
+            <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: oklch(0.62 0.16 255); margin: 0;">live</p>
           </div>
           <div style="display: grid; gap: 12px;">
             <div data-pair="" style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
@@ -109,7 +111,7 @@
               <div style="border: 1px solid #2A2D33; border-radius: 3px; padding: 13px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #E4E5E7;">CMS page builder<div style="color: #6E727A; margin-top: 5px;">reusable components</div></div>
             </div>
             <div style="height: 22px; background-image: repeating-linear-gradient(90deg, #3A3E45 0 7px, transparent 7px 14px); background-size: 14px 1px; background-repeat: repeat-x; background-position: 0 50%; animation: flow 1.8s linear infinite;"></div>
-            <div style="border: 1px solid oklch(0.63 0.19 45 / 0.5); background: oklch(0.63 0.19 45 / 0.08); border-radius: 3px; padding: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #F1EFEA;">ASP.NET Core / Web API
+            <div style="border: 1px solid oklch(0.62 0.16 255 / 0.5); background: oklch(0.62 0.16 255 / 0.08); border-radius: 3px; padding: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #F1EFEA;">ASP.NET Core / Web API
               <div style="color: #B6B8BC; margin-top: 7px; line-height: 1.75;">pricing resolution · discount rules · account context · request queue · index jobs</div>
             </div>
             <div style="height: 22px; background-image: repeating-linear-gradient(90deg, #3A3E45 0 7px, transparent 7px 14px); background-size: 14px 1px; background-repeat: repeat-x; background-position: 0 50%; animation: flow 1.8s linear infinite;"></div>
@@ -134,8 +136,8 @@
           <p style="font-size: 14px; color: #85898F; margin: 0;">production systems worked across — ecommerce, CMS, CRM, services</p>
         </div>
         <div style="padding: 30px 24px; border-right: 1px solid #1D2025;">
-          <p data-count="20" data-suffix=" min" style="font-size: 34px; letter-spacing: -0.035em; font-weight: 600; margin: 0 0 6px; color: #F6F5F1;">20 min</p>
-          <p style="font-size: 14px; color: #85898F; margin: 0;">to assemble a complex CMS page — previously a dev ticket</p>
+          <p style="font-size: 34px; letter-spacing: -0.035em; font-weight: 600; margin: 0 0 6px; color: #F6F5F1;">Same day</p>
+          <p style="font-size: 14px; color: #85898F; margin: 0;">to assemble a complex CMS page, with no deploy — previously a dev ticket</p>
         </div>
         <div style="padding: 30px 0 30px 24px;">
           <p style="font-size: 34px; letter-spacing: -0.035em; font-weight: 600; margin: 0 0 6px; color: #F6F5F1;">Distinction</p>
@@ -165,9 +167,9 @@
       <article id="case-ecommerce" data-two="" style="padding: 64px 0; border-bottom: 1px solid #E2DFD6; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px;">
         <div data-rail="" style="position: sticky; top: 104px; align-self: start; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7079; line-height: 2.1;">
           <div style="font-size: 44px; line-height: 1; letter-spacing: -0.04em; color: #DAD6CB; font-family: Archivo; font-weight: 600; margin-bottom: 16px;">01</div>
-          <div style="color: oklch(0.55 0.17 45);">Flagship — live B2B</div>
+          <div style="color: oklch(0.50 0.16 255);">Flagship — live B2B</div>
           <div style="margin-top: 10px;">Primary developer</div>
-          <div style="margin-top: 10px; color: #8A8F98;">Vue 3 · TypeScript<br />.NET · C#<br />MySQL<br />Solr · SolrNet</div>
+          <div style="margin-top: 10px; color: #8A8F98;">Vue 3 · Vite SSR<br />TypeScript<br />.NET · C# · Dapper<br />MySQL · Solr · SolrNet<br />ASP.NET WebForms (VB.NET)<br />.NET Framework 4.8</div>
         </div>
         <div>
           <h3 data-reveal="" style="font-size: clamp(26px, 3.2vw, 38px); letter-spacing: -0.035em; font-weight: 600; margin: 0 0 16px; line-height: 1.1;">Scientific laboratory supplies — B2B ecommerce &amp; CMS platform</h3>
@@ -200,9 +202,9 @@
 
           <button type="button" onClick="{{ toggle1 }}" style="margin-top: 28px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #0B0C0E; background: transparent; border: 1px solid #D8D4CA; border-radius: 2px; padding: 11px 17px; cursor: pointer;" style-hover="border-color: #0B0C0E;">{{ label1 }}</button>
           <sc-if value="{{ open1 }}" hint-placeholder-val="{{ false }}">
-            <div style="margin-top: 24px; border-left: 2px solid oklch(0.63 0.19 45); padding: 4px 0 4px 26px; animation: heroIn 320ms ease both; display: grid; gap: 20px; max-width: 66ch;">
-              <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Challenge</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Pricing rules had accumulated over years and were being applied in several layers. Any change risked showing one customer another customer's price — the worst possible bug on a trade site.</p></div>
-              <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Decision</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Resolve prices server-side against the account context, keep the rules ordered and readable, and never cache a price without the account in the key. Slightly more work per request, far fewer ways to be wrong.</p></div>
+            <div style="margin-top: 24px; border-left: 2px solid oklch(0.62 0.16 255); padding: 4px 0 4px 26px; animation: heroIn 320ms ease both; display: grid; gap: 20px; max-width: 66ch;">
+              <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Challenge</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Pricing rules had accumulated over years and were being resolved in several places, so the same question could be answered differently depending on the entry point.</p></div>
+              <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Decision</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Consolidate resolution into one server-side path that takes the account context, keep the rules ordered and readable, and key any cache by account. One place to read, and one place to test.</p></div>
               <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Result</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Pricing behaviour is explainable — any displayed price can be traced back through account, discount and contract. New pricing requirements are configuration rather than another special case in the frontend.</p></div>
               <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">What I learned</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">On business-critical logic, one authoritative implementation beats several convenient ones — and caching is where correctness quietly goes to die.</p></div>
             </div>
@@ -213,14 +215,14 @@
       <article id="case-pagebuilder" data-two="" style="padding: 64px 0; border-bottom: 1px solid #E2DFD6; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px;">
         <div data-rail="" style="position: sticky; top: 104px; align-self: start; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7079; line-height: 2.1;">
           <div style="font-size: 44px; line-height: 1; letter-spacing: -0.04em; color: #DAD6CB; font-family: Archivo; font-weight: 600; margin-bottom: 16px;">02</div>
-          <div style="color: oklch(0.55 0.17 45);">Internal tooling</div>
+          <div style="color: oklch(0.50 0.16 255);">Internal tooling</div>
           <div style="margin-top: 10px;">Feature owner</div>
-          <div style="margin-top: 10px; color: #8A8F98;">Vue 3 · TypeScript<br />.NET · C#<br />SQL Server</div>
+          <div style="margin-top: 10px; color: #8A8F98;">Vue 3 · TypeScript<br />.NET · C#<br />MySQL 8.4</div>
         </div>
         <div>
           <h3 data-reveal="" style="font-size: clamp(26px, 3.2vw, 38px); letter-spacing: -0.035em; font-weight: 600; margin: 0 0 16px; line-height: 1.1;">CMS page builder</h3>
           <p data-reveal="" style="font-size: 18px; line-height: 1.65; color: #33383F; margin: 0 0 24px; max-width: 66ch;">Marketing pages used to arrive as development tickets: a layout, a developer building bespoke markup, a release. I built the tooling that turns that into an editorial job — pages assembled from reusable CMS components, configured rather than coded.</p>
-          <p data-reveal="" style="font-size: clamp(22px, 2.6vw, 30px); line-height: 1.35; letter-spacing: -0.03em; margin: 0 0 32px; max-width: 56ch;">A complex page now goes together in about <span style="color: oklch(0.58 0.19 45);">20 minutes</span> — with no developer involved.</p>
+          <p data-reveal="" style="font-size: clamp(22px, 2.6vw, 30px); line-height: 1.35; letter-spacing: -0.03em; margin: 0 0 32px; max-width: 56ch;">A complex page now goes together <span style="color: oklch(0.56 0.16 255);">the same day</span> — with no developer involved and no deploy.</p>
 
           <div data-reveal="" style="border: 1px solid #E2DFD6; background: #FFFFFF; border-radius: 3px; padding: 28px; margin-bottom: 12px;">
             <div data-flow3="" style="display: grid; grid-template-columns: minmax(0,1fr) 56px minmax(0,1fr); gap: 20px; align-items: center;">
@@ -229,8 +231,8 @@
                 <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 13px 15px; font-family: 'IBM Plex Mono', monospace; font-size: 12px;">Component B<div style="color: #8A8F98; margin-top: 4px;">product carousel</div></div>
                 <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 13px 15px; font-family: 'IBM Plex Mono', monospace; font-size: 12px;">Component C<div style="color: #8A8F98; margin-top: 4px;">CTA band</div></div>
               </div>
-              <div data-arrow="" style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 22px; color: oklch(0.63 0.19 45);">→</div>
-              <div style="border: 1px solid oklch(0.63 0.19 45 / 0.4); background: oklch(0.63 0.19 45 / 0.05); border-radius: 3px; padding: 16px; display: grid; gap: 9px;">
+              <div data-arrow="" style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 22px; color: oklch(0.62 0.16 255);">→</div>
+              <div style="border: 1px solid oklch(0.62 0.16 255 / 0.4); background: oklch(0.62 0.16 255 / 0.05); border-radius: 3px; padding: 16px; display: grid; gap: 9px;">
                 <div style="height: 52px; background: repeating-linear-gradient(135deg, #EAE7DF 0 9px, #F7F5F0 9px 18px); border: 1px solid #E2DFD6;"></div>
                 <div style="height: 32px; background: repeating-linear-gradient(135deg, #EAE7DF 0 9px, #F7F5F0 9px 18px); border: 1px solid #E2DFD6;"></div>
                 <div style="height: 24px; background: repeating-linear-gradient(135deg, #EAE7DF 0 9px, #F7F5F0 9px 18px); border: 1px solid #E2DFD6;"></div>
@@ -248,7 +250,7 @@
 
           <button type="button" onClick="{{ toggle2 }}" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #0B0C0E; background: transparent; border: 1px solid #D8D4CA; border-radius: 2px; padding: 11px 17px; cursor: pointer;" style-hover="border-color: #0B0C0E;">{{ label2 }}</button>
           <sc-if value="{{ open2 }}" hint-placeholder-val="{{ false }}">
-            <div style="margin-top: 24px; border-left: 2px solid oklch(0.63 0.19 45); padding: 4px 0 4px 26px; animation: heroIn 320ms ease both; display: grid; gap: 20px; max-width: 66ch;">
+            <div style="margin-top: 24px; border-left: 2px solid oklch(0.62 0.16 255); padding: 4px 0 4px 26px; animation: heroIn 320ms ease both; display: grid; gap: 20px; max-width: 66ch;">
               <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">The tension</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Flexible builders become unusable; rigid ones send everyone back to the developers. I kept flexibility in composition — order, content, variant — and deliberately withheld it from styling and structure.</p></div>
               <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Implementation</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Each component is a Vue component plus a typed configuration contract persisted against the page. Adding a type is one registration and one editor form; existing pages are untouched.</p></div>
               <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">What I learned</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Deciding what the tool <em>won't</em> let people do mattered more than any feature I added to it.</p></div>
@@ -260,7 +262,7 @@
       <article id="case-crm" data-two="" style="padding: 64px 0; border-bottom: 1px solid #E2DFD6; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px;">
         <div data-rail="" style="position: sticky; top: 104px; align-self: start; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7079; line-height: 2.1;">
           <div style="font-size: 44px; line-height: 1; letter-spacing: -0.04em; color: #DAD6CB; font-family: Archivo; font-weight: 600; margin-bottom: 16px;">03</div>
-          <div style="color: oklch(0.55 0.17 45);">Data &amp; reporting</div>
+          <div style="color: oklch(0.50 0.16 255);">Data &amp; reporting</div>
           <div style="margin-top: 10px;">Developer</div>
           <div style="margin-top: 10px; color: #8A8F98;">SQL Server<br />C# · .NET<br />Kendo UI · JS<br />Legacy enterprise</div>
         </div>
@@ -276,9 +278,9 @@
                 <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 11px;">Targets</div>
                 <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 11px;">Accounts</div>
               </div>
-              <div style="text-align: center; color: oklch(0.63 0.19 45);">↓</div>
-              <div style="border: 1px solid oklch(0.63 0.19 45 / 0.4); background: oklch(0.63 0.19 45 / 0.05); border-radius: 3px; padding: 14px;">SQL views + CTEs — normalise stages, weight by rating, bucket by period</div>
-              <div style="text-align: center; color: oklch(0.63 0.19 45);">↓</div>
+              <div style="text-align: center; color: oklch(0.62 0.16 255);">↓</div>
+              <div style="border: 1px solid oklch(0.62 0.16 255 / 0.4); background: oklch(0.62 0.16 255 / 0.05); border-radius: 3px; padding: 14px;">SQL views + CTEs — normalise stages, weight by rating, bucket by period</div>
+              <div style="text-align: center; color: oklch(0.62 0.16 255);">↓</div>
               <div data-tri="" style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px;">
                 <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 13px;">Pipeline vs target<div style="color: #8A8F98; margin-top: 4px;">widget</div></div>
                 <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 13px;">Won / lost<div style="color: #8A8F98; margin-top: 4px;">widget</div></div>
@@ -292,7 +294,7 @@
 
           <button type="button" onClick="{{ toggle3 }}" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #0B0C0E; background: transparent; border: 1px solid #D8D4CA; border-radius: 2px; padding: 11px 17px; cursor: pointer;" style-hover="border-color: #0B0C0E;">{{ label3 }}</button>
           <sc-if value="{{ open3 }}" hint-placeholder-val="{{ false }}">
-            <div style="margin-top: 24px; border-left: 2px solid oklch(0.63 0.19 45); padding: 4px 0 4px 26px; animation: heroIn 320ms ease both; display: grid; gap: 20px; max-width: 66ch;">
+            <div style="margin-top: 24px; border-left: 2px solid oklch(0.62 0.16 255); padding: 4px 0 4px 26px; animation: heroIn 320ms ease both; display: grid; gap: 20px; max-width: 66ch;">
               <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Hard part</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Two people asking "what's in the pipeline?" meant different things. Before touching a query I had to get the definitions agreed — which stages count, whether value is weighted, what date a deal belongs to.</p></div>
               <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Trade-off</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Kept aggregation in maintainable views rather than hand-tuned queries, then fixed the specific slow paths once real usage showed where they were.</p></div>
               <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">What I learned</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">A dashboard is a data-modelling problem wearing a UI. The numbers only become useful once everyone agrees what they mean.</p></div>
@@ -304,7 +306,7 @@
       <article id="case-queue" data-two="" style="padding: 64px 0; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px;">
         <div data-rail="" style="position: sticky; top: 104px; align-self: start; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7079; line-height: 2.1;">
           <div style="font-size: 44px; line-height: 1; letter-spacing: -0.04em; color: #DAD6CB; font-family: Archivo; font-weight: 600; margin-bottom: 16px;">04</div>
-          <div style="color: oklch(0.55 0.17 45);">Backend service</div>
+          <div style="color: oklch(0.50 0.16 255);">Backend service</div>
           <div style="margin-top: 10px;">Developer</div>
           <div style="margin-top: 10px; color: #8A8F98;">C# · .NET<br />SQL Server<br />SendGrid</div>
         </div>
@@ -315,16 +317,16 @@
           <div data-reveal="" style="border: 1px solid #E2DFD6; background: #FFFFFF; border-radius: 3px; padding: 28px; margin-bottom: 12px;">
             <div style="display: grid; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; max-width: 520px; margin: 0 auto;">
               <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 13px; text-align: center;">System A — writes request</div>
-              <div style="text-align: center; color: oklch(0.63 0.19 45);">↓</div>
+              <div style="text-align: center; color: oklch(0.62 0.16 255);">↓</div>
               <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 13px; text-align: center;">Request queue <span style="color: #8A8F98;">— persisted, status: pending</span></div>
-              <div style="text-align: center; color: oklch(0.63 0.19 45);">↓</div>
-              <div style="border: 1px solid oklch(0.63 0.19 45 / 0.4); background: oklch(0.63 0.19 45 / 0.05); border-radius: 3px; padding: 14px; text-align: center;">Processor <span style="color: #6B7079;">— idempotency key, attempt count</span></div>
+              <div style="text-align: center; color: oklch(0.62 0.16 255);">↓</div>
+              <div style="border: 1px solid oklch(0.62 0.16 255 / 0.4); background: oklch(0.62 0.16 255 / 0.05); border-radius: 3px; padding: 14px; text-align: center;">Processor <span style="color: #6B7079;">— idempotency key, attempt count</span></div>
               <div data-tri="" style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; align-items: start;">
                 <div style="border: 1px dashed #C9C4B8; border-radius: 3px; padding: 11px; text-align: center; color: #6B7079;">retry — backoff</div>
                 <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 11px; text-align: center;">success — complete</div>
                 <div style="border: 1px dashed #C9C4B8; border-radius: 3px; padding: 11px; text-align: center; color: #6B7079;">failed — alert email</div>
               </div>
-              <div style="text-align: center; color: oklch(0.63 0.19 45);">↓</div>
+              <div style="text-align: center; color: oklch(0.62 0.16 255);">↓</div>
               <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 13px; text-align: center;">External / internal system</div>
             </div>
           </div>
@@ -334,7 +336,7 @@
 
           <button type="button" onClick="{{ toggle4 }}" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #0B0C0E; background: transparent; border: 1px solid #D8D4CA; border-radius: 2px; padding: 11px 17px; cursor: pointer;" style-hover="border-color: #0B0C0E;">{{ label4 }}</button>
           <sc-if value="{{ open4 }}" hint-placeholder-val="{{ false }}">
-            <div style="margin-top: 24px; border-left: 2px solid oklch(0.63 0.19 45); padding: 4px 0 4px 26px; animation: heroIn 320ms ease both; display: grid; gap: 20px; max-width: 66ch;">
+            <div style="margin-top: 24px; border-left: 2px solid oklch(0.62 0.16 255); padding: 4px 0 4px 26px; animation: heroIn 320ms ease both; display: grid; gap: 20px; max-width: 66ch;">
               <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Failure modes I had to design for</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Timeouts that actually succeeded, malformed payloads that would never succeed, and downstream outages where retrying is exactly right. They need different treatment — retry, park, or alert — so the status model had to distinguish them rather than lumping everything into "error".</p></div>
               <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Debuggability</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Queue rows keep the payload, attempts and last error, so a production question can be answered by looking at the record instead of reproducing the incident.</p></div>
               <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">What I learned</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Reliability is mostly bookkeeping. The interesting engineering is in what you record before you make the call, not in the call itself.</p></div>
@@ -359,7 +361,7 @@
           </sc-for>
         </div>
         <div data-rail="" style="position: sticky; top: 112px; border: 1px solid #E2DFD6; background: #FFFFFF; border-radius: 3px; padding: 28px;">
-          <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.55 0.17 45); margin: 0 0 14px;">{{ activeProblem.tag }}</p>
+          <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.50 0.16 255); margin: 0 0 14px;">{{ activeProblem.tag }}</p>
           <p style="font-size: 17px; line-height: 1.7; color: #33383F; margin: 0 0 20px;">{{ activeProblem.a }}</p>
           <a href="{{ activeProblem.href }}" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; border-bottom: 1px solid #D8D4CA; padding-bottom: 2px;">{{ activeProblem.link }} →</a>
         </div>
@@ -375,8 +377,8 @@
         <div>
           <div style="border-left: 1px solid #DEDACF; padding-left: 32px; display: grid; gap: 40px;">
             <div data-reveal="" style="position: relative;">
-              <span style="position: absolute; left: -37px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: oklch(0.63 0.19 45);"></span>
-              <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7079; margin: 0 0 8px;">Now — Junior Software Developer, full-stack</p>
+              <span style="position: absolute; left: -37px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: oklch(0.62 0.16 255);"></span>
+              <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7079; margin: 0 0 8px;">May 2024 – present — Junior Software Developer, full-stack</p>
               <h3 style="font-size: 21px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 10px;">Owning features across production systems</h3>
               <p style="font-size: 16px; line-height: 1.7; color: #55595F; margin: 0 0 12px; max-width: 64ch;">Working across the B2B ecommerce platform, the CMS and page builder, the CRM and its reporting, backend services and internal tools. Features arrive as a business problem rather than a spec: I investigate the existing behaviour, agree the requirement, then build it through the database, the API and the UI, and support it once it's live.</p>
               <ul style="margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; line-height: 1.6; color: #55595F;">
@@ -388,15 +390,15 @@
             </div>
             <div data-reveal="" style="position: relative;">
               <span style="position: absolute; left: -37px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: #C9C4B8;"></span>
-              <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7079; margin: 0 0 8px;">Earlier — Junior / Apprentice Developer</p>
+              <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7079; margin: 0 0 8px;">Jul 2022 – May 2024 — Apprentice Software Developer</p>
               <h3 style="font-size: 21px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 10px;">From tickets to features</h3>
               <p style="font-size: 16px; line-height: 1.7; color: #55595F; margin: 0; max-width: 64ch;">Started on smaller changes inside large existing applications — Razor, jQuery, Knockout, Kendo UI, VB WebForms — which turned out to be the fastest way to learn how real systems are actually built. Moved from fixing behaviour to adding it, then to owning whole pieces of functionality.</p>
             </div>
             <div data-reveal="" data-pair="" style="position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
               <span style="position: absolute; left: -37px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: #C9C4B8;"></span>
               <div>
-                <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7079; margin: 0 0 8px;">Apprenticeship</p>
-                <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 8px;">Level 4 Software Developer — <span style="color: oklch(0.55 0.17 45);">Distinction</span></h3>
+                <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7079; margin: 0 0 8px;">Apprenticeship — 2022 – 2024</p>
+                <h3 style="font-size: 19px; font-weight: 600; letter-spacing: -0.02em; margin: 0 0 8px;">Level 4 Software Developer — <span style="color: oklch(0.50 0.16 255);">Distinction</span></h3>
                 <p style="font-size: 15px; line-height: 1.7; color: #55595F; margin: 0;">Formal software engineering, programming and database study alongside real delivery on business systems and development processes.</p>
               </div>
               <div>
@@ -418,7 +420,7 @@
             <div style="border-bottom: 1px solid #E2DFD6; padding: 24px 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px;">
               <div style="display: flex; justify-content: space-between; gap: 20px; align-items: baseline;">
                 <h3 style="font-size: 20px; font-weight: 600; letter-spacing: -0.02em; margin: 0;">{{ o.title }}</h3>
-                <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8F98; white-space: nowrap;">{{ o.stack }}</span>
+                <span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8F98;">{{ o.stack }}</span>
               </div>
               <p style="font-size: 16px; line-height: 1.7; color: #55595F; margin: 0; max-width: 72ch;">{{ o.body }}</p>
             </div>
@@ -435,7 +437,7 @@
       <div data-quad="" style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: #E2DFD6; border: 1px solid #E2DFD6;">
         <sc-for list="{{ skillGroups }}" as="g" hint-placeholder-count="8">
           <div style="background: #F6F5F1; padding: 22px;">
-            <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.55 0.17 45); margin: 0 0 14px;">{{ g.name }}</p>
+            <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.50 0.16 255); margin: 0 0 14px;">{{ g.name }}</p>
             <div style="display: flex; flex-wrap: wrap; gap: 7px;">
               <sc-for list="{{ g.items }}" as="s" hint-placeholder-count="6">
                 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #33383F; border: 1px solid #DEDACF; background: #FFFFFF; border-radius: 2px; padding: 5px 9px;">{{ s }}</span>
@@ -458,6 +460,38 @@
             <div><h3 style="font-size: 16px; font-weight: 600; margin: 0 0 7px;">Design for the next person</h3><p style="font-size: 15px; line-height: 1.7; color: #55595F; margin: 0;">Maintainability over cleverness. If a rule is business-critical it belongs in one obvious place, not spread across three layers.</p></div>
             <div><h3 style="font-size: 16px; font-weight: 600; margin: 0 0 7px;">Work with legacy, not against it</h3><p style="font-size: 15px; line-height: 1.7; color: #55595F; margin: 0;">Rewrites are rarely on the table. I improve things incrementally and keep new work consistent with what's already there.</p></div>
             <div><h3 style="font-size: 16px; font-weight: 600; margin: 0 0 7px;">Test the edges</h3><p style="font-size: 15px; line-height: 1.7; color: #55595F; margin: 0;">Manual testing, Playwright and Selenium where it earns its keep, and deliberate thought about the odd cases — empty data, permissions, concurrent users.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai-tooling" style="max-width: 1200px; margin: 0 auto; padding: 84px 28px; border-top: 1px solid #E2DFD6;">
+      <div data-two="" style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px;">
+        <div>
+          <h2 data-reveal="" style="font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.035em; font-weight: 600; margin: 0 0 12px; line-height: 1.1;">AI in the workflow</h2>
+          <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: oklch(0.50 0.16 255); margin: 0;">Copilot → Claude Code</p>
+        </div>
+        <div>
+          <p data-reveal="" style="font-size: 18px; line-height: 1.65; color: #33383F; margin: 0 0 16px; max-width: 66ch;">I started with GitHub Copilot as inline autocomplete and have moved to Claude Code for larger, multi-file work. The useful shift wasn't speed on the typing — it was having something that can read an unfamiliar part of a codebase and explain it back before I change anything.</p>
+          <p data-reveal="" style="font-size: 17px; line-height: 1.65; color: #55595F; margin: 0 0 32px; max-width: 66ch;">The rule I work to is that generated code is a draft, not a result. On production systems people depend on, anything I haven't read line by line doesn't get committed — the review is the work, and the assistant just gets me to the point of having something to review sooner.</p>
+
+          <div data-quad="" style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: #E2DFD6; border: 1px solid #E2DFD6; border-radius: 3px;">
+            <div style="background: #FFFFFF; padding: 24px;">
+              <h4 style="font-size: 16px; font-weight: 600; margin: 0 0 9px;">Reading before writing</h4>
+              <p style="font-size: 15px; line-height: 1.65; color: #55595F; margin: 0;">The strongest use is orientation in code that predates me — tracing how a feature actually behaves across a legacy WebForms app and a modern service, and getting a summary I can then verify, rather than starting from a blank file.</p>
+            </div>
+            <div style="background: #FFFFFF; padding: 24px;">
+              <h4 style="font-size: 16px; font-weight: 600; margin: 0 0 9px;">Scaffolding and boilerplate</h4>
+              <p style="font-size: 15px; line-height: 1.65; color: #55595F; margin: 0;">Repetitive shape-work — mapping layers, test setup, migration scripts, converting a pattern already agreed elsewhere in the codebase — is where it saves real time without needing me to invent anything.</p>
+            </div>
+            <div style="background: #FFFFFF; padding: 24px;">
+              <h4 style="font-size: 16px; font-weight: 600; margin: 0 0 9px;">Where I don't use it</h4>
+              <p style="font-size: 15px; line-height: 1.65; color: #55595F; margin: 0;">Anything where being subtly wrong is expensive — pricing rules, permissions, data migrations. It's fine at proposing an approach in those areas and not something I'd trust to finish one unsupervised.</p>
+            </div>
+            <div style="background: #FFFFFF; padding: 24px;">
+              <h4 style="font-size: 16px; font-weight: 600; margin: 0 0 9px;">This site</h4>
+              <p style="font-size: 15px; line-height: 1.65; color: #55595F; margin: 0;">A working example: this portfolio was built and deployed with Claude Code — the build step, the prerendering, the Pages workflow and the CV conversion tool are all in the repository, so the output is inspectable rather than asserted.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -504,23 +538,6 @@
 
     </sc-if>
 
-    <sc-if value="{{ showTestimonials }}" hint-placeholder-val="{{ false }}">
-    <section style="border-top: 1px solid #E2DFD6; padding: 76px 0;">
-      <div data-two="" style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px;">
-        <h2 style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; font-weight: 500; margin: 8px 0 0;">Recommendations</h2>
-        <div data-pair="" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #E2DFD6; border: 1px solid #E2DFD6;">
-          <div style="background: #FFFFFF; padding: 26px;">
-            <p style="font-size: 17px; line-height: 1.65; color: #33383F; margin: 0 0 16px;">Quote goes here once a real recommendation is available.</p>
-            <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8A8F98; margin: 0;">Name — role, company</p>
-          </div>
-          <div style="background: #FFFFFF; padding: 26px;">
-            <p style="font-size: 17px; line-height: 1.65; color: #33383F; margin: 0 0 16px;">Second quote placeholder.</p>
-            <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8A8F98; margin: 0;">Name — role, company</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    </sc-if>
 
     <sc-if value="{{ showNotes }}" hint-placeholder-val="{{ true }}">
     <section style="border-top: 1px solid #E2DFD6; padding: 76px 0;">
@@ -549,7 +566,7 @@
         <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6E727A; margin: 0 0 8px;">Currently building</p><p style="font-size: 16px; line-height: 1.6; margin: 0;">Production B2B ecommerce and CMS systems</p></div>
         <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6E727A; margin: 0 0 8px;">Currently learning</p><p style="font-size: 16px; line-height: 1.6; margin: 0;">Software architecture and system design</p></div>
         <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6E727A; margin: 0 0 8px;">Interested in</p><p style="font-size: 16px; line-height: 1.6; margin: 0;">Full-stack and backend engineering roles</p></div>
-        <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6E727A; margin: 0 0 8px;">Location / next</p><p style="font-size: 16px; line-height: 1.6; margin: 0;">Hull, UK → Manchester</p></div>
+        <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6E727A; margin: 0 0 8px;">Location / next</p><p style="font-size: 16px; line-height: 1.6; margin: 0;">Hull, UK · open to relocation</p></div>
       </div>
 
       <div data-two="" style="display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 56px; padding: 64px 0 72px; align-items: end;">
@@ -558,25 +575,25 @@
           <p style="font-size: 18px; line-height: 1.6; color: #B6B8BC; max-width: 48ch; margin: 0;">If you're hiring for full-stack or backend work — .NET, C#, Vue, SQL — I'd be glad to talk through any of the above in more detail.</p>
         </div>
         <div style="display: grid; gap: 14px;">
-          <a href="mailto:alexcarmichael857@gmail.com" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; border: 1px solid #2C2F35; border-radius: 2px; padding: 18px 20px; color: #F6F5F1; font-size: 17px;" style-hover="border-color: oklch(0.63 0.19 45); color: oklch(0.63 0.19 45);">Email <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8E9299;">alexcarmichael857@gmail.com</span></a>
+          <a href="mailto:alexcarmichael857@gmail.com" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; border: 1px solid #2C2F35; border-radius: 2px; padding: 18px 20px; color: #F6F5F1; font-size: 17px;" style-hover="border-color: oklch(0.62 0.16 255); color: oklch(0.62 0.16 255);">Email <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #8E9299;">alexcarmichael857@gmail.com</span></a>
           <div data-pair="" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
             <a href="https://www.linkedin.com/in/alexcarmichael12/" target="_blank" rel="noopener" style="border: 1px solid #2C2F35; border-radius: 2px; padding: 18px 20px; color: #F6F5F1; font-size: 17px;" style-hover="border-color: #F6F5F1;">LinkedIn ↗</a>
             <a href="https://github.com/Alex-Carmichael" target="_blank" rel="noopener" style="border: 1px solid #2C2F35; border-radius: 2px; padding: 18px 20px; color: #F6F5F1; font-size: 17px;" style-hover="border-color: #F6F5F1;">GitHub ↗</a>
           </div>
-          <a href="./Alex-Carmichael-CV.pdf" download style="background: oklch(0.63 0.19 45); color: #0B0C0E; border-radius: 2px; padding: 18px 20px; font-size: 17px; font-weight: 500; display: flex; justify-content: space-between;" style-hover="background: #F6F5F1;">Download CV <span>↓</span></a>
+          <a href="./Alex-Carmichael-CV.pdf" download style="background: oklch(0.62 0.16 255); color: #0B0C0E; border-radius: 2px; padding: 18px 20px; font-size: 17px; font-weight: 500; display: flex; justify-content: space-between;" style-hover="background: #F6F5F1;">Download CV <span>↓</span></a>
         </div>
       </div>
 
       <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #6E727A; border-top: 1px solid #1D2025; padding-top: 24px;">
         <span>Alex Carmichael — Software Developer</span>
-        <span>Hull, UK · Open to Manchester · Hybrid / Remote</span>
+        <span>Hull, UK · Open to relocation · Hybrid / Remote</span>
       </div>
     </div>
   </section>
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;showPersonalProjects&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showNotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showTestimonials&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;showPersonalProjects&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showNotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
 class Component extends DCLogic {
   state = { open1: false, open2: false, open3: false, open4: false, menuOpen: false, active: 0 };
 
@@ -636,7 +653,7 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    const accent = "oklch(0.55 0.17 45)";
+    const accent = "oklch(0.50 0.16 255)";
     const problemData = [
       { q: "How do you retry a failed request without creating duplicates?", tag: "Request queue service", a: "Persist the request with a status and attempt count before anything is sent, give it an idempotency key so the receiving system can recognise a repeat, and separate the failure types — transient errors get backed off and retried, permanent ones get parked and escalated. Nothing leaves the queue without an outcome recorded against it.", link: "Read the case study", href: "#case-queue" },
       { q: "How do you make customer-specific ecommerce pricing manageable?", tag: "B2B ecommerce platform", a: "Stop treating price as data on the product. Resolve it server-side from the account context — agreed discounts, contract lines, outlet relationships — in one ordered set of rules that every surface calls. Then never cache a price without the account in the key.", link: "Read the case study", href: "#case-ecommerce" },
@@ -658,7 +675,6 @@ class Component extends DCLogic {
     return {
       showPersonalProjects: this.props.showPersonalProjects ?? true,
       showNotes: this.props.showNotes ?? true,
-      showTestimonials: this.props.showTestimonials ?? false,
       progressRef: this.progressRef,
       menuOpen: this.state.menuOpen,
       burgerLabel: this.state.menuOpen ? "✕" : "≡",
@@ -685,14 +701,14 @@ class Component extends DCLogic {
         { title: "Legacy modernisation", stack: "Razor · jQuery · Knockout · VB WebForms", body: "Upgrading and maintaining older enterprise applications alongside new development. Being able to work inside a system that predates you, without breaking it, has been as valuable as anything greenfield." }
       ],
       skillGroups: [
-        { name: "Backend", items: ["C#", ".NET", "ASP.NET Core", "ASP.NET MVC", "Web API", "EF Core", "ADO.NET", "REST APIs", "SignalR"] },
+        { name: "Backend", items: ["C#", ".NET", "ASP.NET Core", "ASP.NET MVC", "Web API", "Dapper", "ADO.NET", "REST APIs"] },
         { name: "Frontend", items: ["Vue 3", "TypeScript", "JavaScript", "React", "Next.js", "Razor", "jQuery", "Knockout", "Kendo UI", "Tailwind", "Bootstrap"] },
-        { name: "Data", items: ["SQL Server", "PostgreSQL", "MySQL", "SQLite", "complex SQL", "views", "CTEs", "database design", "query debugging"] },
+        { name: "Data", items: ["MySQL 8.4", "SQL Server", "Dapper", "PostgreSQL", "SQLite", "complex SQL", "views", "CTEs", "database design", "query debugging"] },
         { name: "Search", items: ["Solr", "SolrNet", "indexing", "filtering", "product search"] },
         { name: "Testing", items: ["Playwright", "xUnit", "Vitest", "manual testing", "debugging"] },
         { name: "Tools", items: ["Git", "Azure DevOps", "Visual Studio", "VS Code", "Rider"] },
         { name: "Cloud / services", items: ["Azure", "Azure Search", "SendGrid", "Supabase", "Cloudflare", "external APIs"] },
-        { name: "Legacy", items: ["VB WebForms", "jQuery", "Knockout", "legacy .NET"] }
+        { name: "Maintained & migrated", items: ["ASP.NET WebForms (VB.NET)", ".NET Framework 4.8", "jQuery", "Knockout", "Kendo UI"] }
       ],
       notes: [
         { cat: "SQL", title: "Why my pipeline totals were double-counting, and what CTEs fixed" },

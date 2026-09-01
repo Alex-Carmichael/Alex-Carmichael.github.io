@@ -42,7 +42,7 @@ NOSCRIPT = """
     <p style="font-size:16px;line-height:1.6;color:#55595F;margin:0 0 18px;">
       This portfolio renders with JavaScript, which is currently disabled in your browser.
       Enable it to view the site, or reach me directly at
-      <a href="mailto:hello@example.com" style="color:#0B0C0E;">hello@example.com</a>.
+      <a href="mailto:alexcarmichael857@gmail.com" style="color:#0B0C0E;">alexcarmichael857@gmail.com</a>.
     </p>
     <p style="font-size:15px;line-height:1.6;color:#55595F;margin:0;">
       .NET / C# / VB / Vue / JavaScript / TypeScript / MySQL / SQL Server / Solr
@@ -105,6 +105,11 @@ def build() -> None:
     uploads = ROOT / "uploads"
     if uploads.is_dir():
         shutil.copytree(uploads, DIST / "uploads")
+
+    # Anything in public/ (CV, images, downloads) is copied to the site root.
+    public = ROOT / "public"
+    if public.is_dir():
+        shutil.copytree(public, DIST, dirs_exist_ok=True)
 
     cname = ROOT / "CNAME"
     if cname.exists():

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 920" width="1600" height="920" role="img" aria-label="Diagram of a B2B catalogue listing: a facet rail on the left, product rows on the right, each showing a list price struck through and an account-specific price resolved server-side.">
+  <title>B2B catalogue with account-resolved pricing</title>
+  <rect width="1600" height="920" fill="#FAF9F5"/>
+
+  <!-- search bar -->
+  <rect x="64" y="64" width="1472" height="72" rx="4" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="2"/>
+  <circle cx="112" cy="100" r="13" fill="none" stroke="#A9ADB4" stroke-width="3"/>
+  <line x1="122" y1="110" x2="132" y2="120" stroke="#A9ADB4" stroke-width="3" stroke-linecap="round"/>
+  <rect x="156" y="90" width="300" height="20" rx="4" fill="#EDEAE2"/>
+  <rect x="1330" y="82" width="170" height="36" rx="3" fill="#3986E4"/>
+  <text x="1415" y="106" font-family="'IBM Plex Mono', monospace" font-size="15" fill="#0B0C0E" text-anchor="middle">Solr index</text>
+
+  <!-- facet rail -->
+  <rect x="64" y="172" width="316" height="684" rx="4" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="2"/>
+  <text x="96" y="216" font-family="'IBM Plex Mono', monospace" font-size="15" fill="#8A8F98" letter-spacing="1.5">FACETS</text>
+  <g fill="#EDEAE2">
+    <rect x="96" y="244" width="180" height="16" rx="4"/>
+    <rect x="96" y="284" width="240" height="16" rx="4"/>
+    <rect x="96" y="324" width="150" height="16" rx="4"/>
+    <rect x="96" y="364" width="212" height="16" rx="4"/>
+    <rect x="96" y="404" width="168" height="16" rx="4"/>
+  </g>
+  <rect x="96" y="452" width="252" height="2" fill="#E2DFD6"/>
+  <text x="96" y="496" font-family="'IBM Plex Mono', monospace" font-size="15" fill="#8A8F98" letter-spacing="1.5">ACCOUNT</text>
+  <rect x="96" y="518" width="252" height="56" rx="3" fill="#F2F6FD" stroke="#3986E4" stroke-width="2"/>
+  <text x="116" y="545" font-family="'IBM Plex Mono', monospace" font-size="14" fill="#0961BB">active account</text>
+  <text x="116" y="565" font-family="'IBM Plex Mono', monospace" font-size="13" fill="#8A8F98">contract · outlet · discounts</text>
+
+  <!-- product rows -->
+  <g>
+    <rect x="412" y="172" width="1124" height="156" rx="4" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="2"/>
+    <rect x="444" y="204" width="92" height="92" rx="3" fill="#EDEAE2"/>
+    <rect x="568" y="212" width="420" height="18" rx="4" fill="#DAD6CB"/>
+    <rect x="568" y="248" width="290" height="14" rx="4" fill="#EDEAE2"/>
+    <rect x="568" y="274" width="180" height="14" rx="4" fill="#EDEAE2"/>
+    <text x="1504" y="228" font-family="'IBM Plex Mono', monospace" font-size="15" fill="#A9ADB4" text-anchor="end" text-decoration="line-through">list price</text>
+    <text x="1504" y="266" font-family="Archivo, system-ui, sans-serif" font-size="26" font-weight="600" fill="#0961BB" text-anchor="end">your price</text>
+    <text x="1504" y="292" font-family="'IBM Plex Mono', monospace" font-size="13" fill="#8A8F98" text-anchor="end">resolved server-side</text>
+  </g>
+  <g>
+    <rect x="412" y="348" width="1124" height="156" rx="4" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="2"/>
+    <rect x="444" y="380" width="92" height="92" rx="3" fill="#EDEAE2"/>
+    <rect x="568" y="388" width="356" height="18" rx="4" fill="#DAD6CB"/>
+    <rect x="568" y="424" width="320" height="14" rx="4" fill="#EDEAE2"/>
+    <rect x="568" y="450" width="204" height="14" rx="4" fill="#EDEAE2"/>
+    <text x="1504" y="404" font-family="'IBM Plex Mono', monospace" font-size="15" fill="#A9ADB4" text-anchor="end" text-decoration="line-through">list price</text>
+    <text x="1504" y="442" font-family="Archivo, system-ui, sans-serif" font-size="26" font-weight="600" fill="#0961BB" text-anchor="end">your price</text>
+    <text x="1504" y="468" font-family="'IBM Plex Mono', monospace" font-size="13" fill="#8A8F98" text-anchor="end">contract line</text>
+  </g>
+  <g>
+    <rect x="412" y="524" width="1124" height="156" rx="4" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="2"/>
+    <rect x="444" y="556" width="92" height="92" rx="3" fill="#EDEAE2"/>
+    <rect x="568" y="564" width="392" height="18" rx="4" fill="#DAD6CB"/>
+    <rect x="568" y="600" width="256" height="14" rx="4" fill="#EDEAE2"/>
+    <rect x="568" y="626" width="228" height="14" rx="4" fill="#EDEAE2"/>
+    <text x="1504" y="614" font-family="'IBM Plex Mono', monospace" font-size="17" fill="#8A8F98" text-anchor="end">POA</text>
+  </g>
+
+  <!-- resolution note -->
+  <rect x="412" y="700" width="1124" height="156" rx="4" fill="#FFFFFF" stroke="#E2DFD6" stroke-width="2" stroke-dasharray="7 6"/>
+  <text x="444" y="746" font-family="'IBM Plex Mono', monospace" font-size="15" fill="#8A8F98" letter-spacing="1.5">ONE RESOLUTION PATH</text>
+  <text x="444" y="788" font-family="'IBM Plex Mono', monospace" font-size="17" fill="#33383F">storefront · order history · CMS blocks</text>
+  <text x="444" y="820" font-family="'IBM Plex Mono', monospace" font-size="17" fill="#0961BB">→ same server-side price for the same account</text>
+</svg>

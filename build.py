@@ -33,8 +33,8 @@ DESCRIPTION = (
     "and backend services."
 )
 THEME_COLOR = "#0B0C0E"
-OG_IMAGE = "media/sls-storefront.png"
-OG_IMAGE_ALT = "The Scientific Laboratory Supplies storefront, built on the platform described in case study 01."
+OG_IMAGE = "media/og-card.png"
+OG_IMAGE_ALT = "Alex Carmichael — full-stack software developer. I build software people actually use."
 
 # Chrome is used to prerender the page so crawlers and no-JS clients get real
 # content instead of the runtime's mustache template.

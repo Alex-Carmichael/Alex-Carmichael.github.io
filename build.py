@@ -201,6 +201,13 @@ def build() -> None:
 
     html = SOURCE.read_text(encoding="utf-8")
 
+    # Authoring notes (<!-- TODO(alex) ... -->) are working comments in the
+    # canvas source. They are invisible on the page but would still be readable
+    # in view-source on the deployed site, so they are stripped here.
+    html, notes = re.subn(r"[ \t]*<!--\s*TODO\(alex\).*?-->[ \t]*\n?", "", html, flags=re.S)
+    if notes:
+        print(f"  stripped {notes} authoring note(s)")
+
     if "<html>" not in html:
         raise SystemExit("expected a bare <html> tag to add lang= to")
     html = html.replace("<html>", '<html lang="en">', 1)

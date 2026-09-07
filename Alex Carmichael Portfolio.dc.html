@@ -112,7 +112,7 @@
             </div>
             <div style="height: 22px; background-image: repeating-linear-gradient(90deg, #3A3E45 0 7px, transparent 7px 14px); background-size: 14px 1px; background-repeat: repeat-x; background-position: 0 50%; animation: flow 1.8s linear infinite;"></div>
             <div style="border: 1px solid oklch(0.62 0.16 255 / 0.5); background: oklch(0.62 0.16 255 / 0.08); border-radius: 3px; padding: 16px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #F1EFEA;">ASP.NET Core / Web API
-              <div style="color: #B6B8BC; margin-top: 7px; line-height: 1.75;">pricing resolution · discount rules · account context · request queue · index jobs</div>
+              <div style="color: #B6B8BC; margin-top: 7px; line-height: 1.75;">pricing resolution · discount rules · account context · payment orchestration · index jobs</div>
             </div>
             <div style="height: 22px; background-image: repeating-linear-gradient(90deg, #3A3E45 0 7px, transparent 7px 14px); background-size: 14px 1px; background-repeat: repeat-x; background-position: 0 50%; animation: flow 1.8s linear infinite;"></div>
             <div data-tri="" style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px;">
@@ -303,43 +303,51 @@
         </div>
       </article>
 
-      <article id="case-queue" data-two="" style="padding: 64px 0; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px;">
+      <article id="case-payments" data-two="" style="padding: 64px 0; display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 56px;">
         <div data-rail="" style="position: sticky; top: 104px; align-self: start; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6B7079; line-height: 2.1;">
           <div style="font-size: 44px; line-height: 1; letter-spacing: -0.04em; color: #DAD6CB; font-family: Archivo; font-weight: 600; margin-bottom: 16px;">04</div>
           <div style="color: oklch(0.50 0.16 255);">Backend service</div>
           <div style="margin-top: 10px;">Developer</div>
-          <div style="margin-top: 10px; color: #8A8F98;">C# · .NET<br />SQL Server<br />SendGrid</div>
+          <div style="margin-top: 10px; color: #8A8F98;">.NET · C#<br />Dapper · MySQL<br />GlobalPay<br />Vue 3 · TypeScript</div>
         </div>
         <div>
-          <h3 data-reveal="" style="font-size: clamp(26px, 3.2vw, 38px); letter-spacing: -0.035em; font-weight: 600; margin: 0 0 16px; line-height: 1.1;">Request queue service</h3>
-          <p data-reveal="" style="font-size: 18px; line-height: 1.65; color: #33383F; margin: 0 0 28px; max-width: 66ch;">Two systems needed to exchange requests reliably without either being available at the same moment. I implemented queue processing for inbound and outbound requests: statuses, retries, failure handling and notifications when something needs a human.</p>
+          <h3 data-reveal="" style="font-size: clamp(26px, 3.2vw, 38px); letter-spacing: -0.035em; font-weight: 600; margin: 0 0 16px; line-height: 1.1;">Card payments &amp; checkout</h3>
+          <p data-reveal="" style="font-size: 18px; line-height: 1.65; color: #33383F; margin: 0 0 24px; max-width: 66ch;">Card checkout on the trade platform still ran through the legacy application. I built the service behind it on the new stack: pricing the basket server-side, creating a payment session, handing the customer off to GlobalPay’s hosted payment page, and turning what comes back into an order the ERP can pick up. Pay-on-account and account-balance payments now sit behind the same orchestration; the procurement-punchout paths stay on the legacy system by choice.</p>
+          <p data-reveal="" style="font-size: clamp(22px, 2.6vw, 30px); line-height: 1.35; letter-spacing: -0.03em; margin: 0 0 32px; max-width: 58ch;">Live card payments on the new stack — <span style="color: oklch(0.56 0.16 255);">the least reversible path on the site</span>, and so the most heavily logged.</p>
 
           <div data-reveal="" style="border: 1px solid #E2DFD6; background: #FFFFFF; border-radius: 3px; padding: 28px; margin-bottom: 12px;">
-            <div style="display: grid; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; max-width: 520px; margin: 0 auto;">
-              <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 13px; text-align: center;">System A — writes request</div>
+            <div style="display: grid; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; max-width: 560px; margin: 0 auto;">
+              <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 13px; text-align: center;">Basket <span style="color: #8A8F98;">— priced server-side</span></div>
               <div style="text-align: center; color: oklch(0.62 0.16 255);">↓</div>
-              <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 13px; text-align: center;">Request queue <span style="color: #8A8F98;">— persisted, status: pending</span></div>
+              <div style="border: 1px solid oklch(0.62 0.16 255 / 0.4); background: oklch(0.62 0.16 255 / 0.05); border-radius: 3px; padding: 14px; text-align: center;">Pending order written <span style="color: #6B7079;">— token, amount, status</span></div>
               <div style="text-align: center; color: oklch(0.62 0.16 255);">↓</div>
-              <div style="border: 1px solid oklch(0.62 0.16 255 / 0.4); background: oklch(0.62 0.16 255 / 0.05); border-radius: 3px; padding: 14px; text-align: center;">Processor <span style="color: #6B7079;">— idempotency key, attempt count</span></div>
-              <div data-tri="" style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; align-items: start;">
-                <div style="border: 1px dashed #C9C4B8; border-radius: 3px; padding: 11px; text-align: center; color: #6B7079;">retry — backoff</div>
-                <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 11px; text-align: center;">success — complete</div>
-                <div style="border: 1px dashed #C9C4B8; border-radius: 3px; padding: 11px; text-align: center; color: #6B7079;">failed — alert email</div>
+              <div style="border: 1px dashed #C9C4B8; border-radius: 3px; padding: 13px; text-align: center; color: #6B7079;">GlobalPay hosted page <span style="color: #8A8F98;">— decision made off-site</span></div>
+              <div data-pair="" style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; align-items: start;">
+                <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 11px; text-align: center;">customer returns</div>
+                <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 11px; text-align: center;">server callback</div>
               </div>
               <div style="text-align: center; color: oklch(0.62 0.16 255);">↓</div>
-              <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 13px; text-align: center;">External / internal system</div>
+              <div style="border: 1px solid oklch(0.62 0.16 255 / 0.4); background: oklch(0.62 0.16 255 / 0.05); border-radius: 3px; padding: 14px; text-align: center;">Matched by token and amount <span style="color: #6B7079;">— exactly one order</span></div>
+              <div style="text-align: center; color: oklch(0.62 0.16 255);">↓</div>
+              <div style="border: 1px solid #DEDACF; border-radius: 3px; padding: 13px; text-align: center;">ERP picks up the order</div>
+              <div style="border-top: 1px dashed #DEDACF; margin-top: 4px; padding-top: 12px; text-align: center; color: #8A8F98;">Audit log — the gateway’s raw response appended at every step</div>
             </div>
           </div>
-          <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8F98; margin: 0 0 30px;">Fig. 4 — every request has a persisted state; nothing leaves the queue without an outcome.</p>
+          <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #8A8F98; margin: 0 0 30px;">Fig. 4 — the pending order exists before the hand-off; both returns are matched against it, and a replay produces no second order.</p>
 
-          <p style="font-size: 17px; line-height: 1.7; color: #55595F; margin: 0 0 28px; max-width: 66ch;">The requirement that shaped everything: a failed request must never silently disappear. Each one is persisted with a status and an attempt count before anything is sent, retried on a backoff, and escalated by email once it has clearly stopped being a transient problem. Because the receiving side wasn't always safe to call twice, retries carry an idempotency key so a retry can't duplicate work.</p>
+          <p style="font-size: 17px; line-height: 1.7; color: #55595F; margin: 0 0 32px; max-width: 66ch;">The awkward part of any redirect payment is that the decision is made somewhere you don’t control and reaches you twice: once as the customer coming back, once as a server-to-server callback. So the pending order is written before the hand-off, every return is matched against it by token and amount before anything is created, and a replayed callback has to produce exactly one order rather than a second one. Each step appends to an audit log holding the gateway’s raw response, because the question you get asked later is what the gateway said, not what we recorded.</p>
+
+          <div data-tri="" style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 26px; margin-bottom: 28px;">
+            <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Problem</p><p style="font-size: 15px; line-height: 1.65; color: #55595F; margin: 0;">Checkout was the last path still tied to the legacy application — and the one where a bug costs money, not a refresh.</p></div>
+            <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Approach</p><p style="font-size: 15px; line-height: 1.65; color: #55595F; margin: 0;">Persist before the hand-off, trust only the gateway’s own response, and make every attempt auditable.</p></div>
+            <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Result</p><p style="font-size: 15px; line-height: 1.65; color: #55595F; margin: 0;">Live card payments on the new stack, with the failure paths under test, not just the happy one.</p></div>
+          </div>
 
           <button type="button" onClick="{{ toggle4 }}" style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #0B0C0E; background: transparent; border: 1px solid #D8D4CA; border-radius: 2px; padding: 11px 17px; cursor: pointer;" style-hover="border-color: #0B0C0E;">{{ label4 }}</button>
           <sc-if value="{{ open4 }}" hint-placeholder-val="{{ false }}">
             <div style="margin-top: 24px; border-left: 2px solid oklch(0.62 0.16 255); padding: 4px 0 4px 26px; animation: heroIn 320ms ease both; display: grid; gap: 20px; max-width: 66ch;">
-              <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Failure modes I had to design for</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Timeouts that actually succeeded, malformed payloads that would never succeed, and downstream outages where retrying is exactly right. They need different treatment — retry, park, or alert — so the status model had to distinguish them rather than lumping everything into "error".</p></div>
-              <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">Debuggability</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Queue rows keep the payload, attempts and last error, so a production question can be answered by looking at the record instead of reproducing the incident.</p></div>
-              <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">What I learned</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">Reliability is mostly bookkeeping. The interesting engineering is in what you record before you make the call, not in the call itself.</p></div>
+              <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">The failure the log caught</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">A payment GlobalPay had approved was being reported to the customer as unsuccessful. On a hosted-page transaction the lifecycle status stays INITIATED even after a successful capture, and the authoritative signal is the action result code — which is what the legacy implementation had been reading all along. Found on test credentials, so it cost a redeploy rather than a reconciliation.</p></div>
+              <div><p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #6B7079; margin: 0 0 7px;">What I learned</p><p style="font-size: 16px; line-height: 1.7; color: #33383F; margin: 0;">On a redirect payment you own the bookkeeping, not the decision. What the audit log holds is the only reason that mismatch was a redeploy instead of an argument about what happened.</p></div>
             </div>
           </sc-if>
         </div>
@@ -655,7 +663,7 @@ class Component extends DCLogic {
   renderVals() {
     const accent = "oklch(0.50 0.16 255)";
     const problemData = [
-      { q: "How do you retry a failed request without creating duplicates?", tag: "Request queue service", a: "Persist the request with a status and attempt count before anything is sent, give it an idempotency key so the receiving system can recognise a repeat, and separate the failure types — transient errors get backed off and retried, permanent ones get parked and escalated. Nothing leaves the queue without an outcome recorded against it.", link: "Read the case study", href: "#case-queue" },
+      { q: "How do you take a card payment when the decision is made off your site?", tag: "Card payments & checkout", a: "Write the pending order before you hand the customer off, then treat both of the ways the answer comes back — the customer returning and the server-to-server callback — as claims to be matched against it by token and amount. A replayed callback has to produce exactly one order, and every step appends the gateway's raw response to an audit log, because the question afterwards is what the gateway said.", link: "Read the case study", href: "#case-payments" },
       { q: "How do you make customer-specific ecommerce pricing manageable?", tag: "B2B ecommerce platform", a: "Stop treating price as data on the product. Resolve it server-side from the account context — agreed discounts, contract lines, outlet relationships — in one ordered set of rules that every surface calls. Then never cache a price without the account in the key.", link: "Read the case study", href: "#case-ecommerce" },
       { q: "How do you build a CMS that's flexible without becoming hard to use?", tag: "CMS page builder", a: "Put the flexibility in composition and none of it in structure. Editors choose which components appear, in what order, with what content; they can't alter layout or styling. A smaller set of well-defined components made pages faster to build and impossible to break.", link: "Read the case study", href: "#case-pagebuilder" },
       { q: "How do you search a large product catalogue quickly?", tag: "Solr search engineering", a: "An index designed around how people actually filter, not around the database schema. Solr through SolrNet, facets that match buying behaviour, partial document updates when one product changes instead of a full reindex, and enough visibility into scoring to explain why a result ranks where it does.", link: "See the search work", href: "#case-ecommerce" },
@@ -707,13 +715,13 @@ class Component extends DCLogic {
         { name: "Search", items: ["Solr", "SolrNet", "indexing", "filtering", "product search"] },
         { name: "Testing", items: ["Playwright", "xUnit", "Vitest", "manual testing", "debugging"] },
         { name: "Tools", items: ["Git", "Azure DevOps", "Visual Studio", "VS Code", "Rider"] },
-        { name: "Cloud / services", items: ["Azure", "Azure Search", "SendGrid", "Supabase", "Cloudflare", "external APIs"] },
+        { name: "Cloud / services", items: ["Azure", "Azure Search", "GlobalPay", "SendGrid", "Supabase", "Cloudflare", "external APIs"] },
         { name: "Maintained & migrated", items: ["ASP.NET WebForms (VB.NET)", ".NET Framework 4.8", "jQuery", "Knockout", "Kendo UI"] }
       ],
       notes: [
         { cat: "SQL", title: "Why my pipeline totals were double-counting, and what CTEs fixed" },
         { cat: "Solr", title: "Partial document updates: reindexing one product instead of the catalogue" },
-        { cat: ".NET", title: "Idempotency keys are cheaper than working out whether a retry ran twice" },
+        { cat: ".NET", title: "A replayed payment callback should produce exactly one order" },
         { cat: "Vue", title: "Caching per-account data without leaking it between accounts" }
       ]
     };

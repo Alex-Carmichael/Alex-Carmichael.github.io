@@ -28,9 +28,9 @@ SOURCE = ROOT / "Alex Carmichael Portfolio.dc.html"
 
 TITLE = "Alex Carmichael — Software Developer"
 DESCRIPTION = (
-    "Full-stack software developer in Hull, UK. Four years on production "
-    "systems: B2B ecommerce, a component-driven CMS, CRM reporting, search "
-    "and backend services."
+    "Full-stack software developer in Hull, UK with four years of commercial "
+    "experience. Building a B2B ecommerce storefront and CMS in .NET and Vue, "
+    "alongside CRM reporting and backend services."
 )
 THEME_COLOR = "#0B0C0E"
 OG_IMAGE = "media/og-card.png"
